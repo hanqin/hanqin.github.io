@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: notes | Han Qin . Me]]></title>
+  <link href="http://hanqin.herokuapp.com//blog/categories/notes/atom.xml" rel="self"/>
+  <link href="http://hanqin.herokuapp.com//"/>
+  <updated>2013-07-25T23:44:32+08:00</updated>
+  <id>http://hanqin.herokuapp.com//</id>
+  <author>
+    <name><![CDATA[Han Qin]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Setup octopress on heroku - day 1]]></title>
+    <link href="http://hanqin.herokuapp.com//blog/2013/07/25/building-octopress-based-blog-day-1/"/>
+    <updated>2013-07-25T23:10:00+08:00</updated>
+    <id>http://hanqin.herokuapp.com//blog/2013/07/25/building-octopress-based-blog-day-1</id>
+    <content type="html"><![CDATA[<h3>Tasks:</h3>
+
+<ol>
+<li>Setup <a href="http://octopress.org/">octopress</a> according to the <a href="http://octopress.org/docs/">documentation</a></li>
+<li>Update blog configuration, ruby version as well(required by heroku)</li>
+<li>Created a <a href="http://hanqin.herokuapp.com/blog/2013/07/25/this-is-a-test/">test blog</a></li>
+<li>Update google analytics
+
+<ul>
+<li>Thanks to this <a href="http://stefanalfbo.github.io/blog/2013/04/17/octopress-google-analytics-github-pages/">article</a></li>
+</ul>
+</li>
+<li>Markdown <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-headers">cheat sheet</a></li>
+</ol>
+
+
+<h3>Problems</h3>
+
+<ol>
+<li>Google analytics not working, solution as mentioned above</li>
+<li>Slow connection to heroku</li>
+</ol>
+
+
+<p><code>
+git push heroku master
+</code>
+but only got Operation/Connecting timed out error. To fix the issue, manually add ~/.ssh/config, and put following lines in it:
+<code>
+Host heroku.com
+User freemember007
+Hostname 107.21.95.3
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+port 22
+</code>
+Thanks to this <a href="http://ruby-china.org/topics/10813">article</a></p>
+
+<h3>Next</h3>
+
+<ol>
+<li>Comment</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
