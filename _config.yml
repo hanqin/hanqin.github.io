@@ -62,6 +62,10 @@ default_asides: [asides/recent_posts.html, asides/github.html, custom/asides/dou
 #   3rd Party Settings    #
 # ----------------------- #
 
+# Readability
+readability_basic_buttons: false # Read Now, Read Later
+readability_all_buttons: true # Read Now, Read Later, Print, Email, Send to Kindle
+
 # Github repositories
 github_user: hanqin
 github_repo_count: 5
@@ -97,7 +101,7 @@ disqus_show_comment_count: false
 google_analytics_tracking_id: UA-42725285-1
 
 # Facebook Like
-facebook_like: true
+facebook_like: false
 
 #Douban
 douban_user: hanhaify #The Doban Id ,Leave it blank to display this plugin
