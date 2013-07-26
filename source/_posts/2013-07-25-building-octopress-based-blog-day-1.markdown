@@ -6,7 +6,7 @@ comments: true
 categories: daily notes
 ---
 
-### Tasks:
+### Tasks
 
 1. Setup [octopress](http://octopress.org/) according to the [documentation](http://octopress.org/docs/)
 2. Update blog configuration, ruby version as well(required by heroku)
