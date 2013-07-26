@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: notes | Han Qin . Me]]></title>
-  <link href="http://hanqin.herokuapp.com//blog/categories/notes/atom.xml" rel="self"/>
+  <title><![CDATA[Category: octopress plugins | Han Qin . Me]]></title>
+  <link href="http://hanqin.herokuapp.com//blog/categories/octopress-plugins/atom.xml" rel="self"/>
   <link href="http://hanqin.herokuapp.com//"/>
   <updated>2013-07-26T23:05:07+08:00</updated>
   <id>http://hanqin.herokuapp.com//</id>
@@ -62,15 +62,6 @@ Thanks to this <a href="http://ruby-china.org/topics/10813">article</a></p>
 <li>Comment</li>
 </ol>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[this is a test]]></title>
-    <link href="http://hanqin.herokuapp.com//blog/2013/07/25/this-is-a-test/"/>
-    <updated>2013-07-25T22:06:00+08:00</updated>
-    <id>http://hanqin.herokuapp.com//blog/2013/07/25/this-is-a-test</id>
-    <content type="html"><![CDATA[<p>This is a test</p>
 ]]></content>
   </entry>
   

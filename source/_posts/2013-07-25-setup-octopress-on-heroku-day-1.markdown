@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Setup octopress on heroku - day 1"
+title: "octopress on heroku - day 1"
 date: 2013-07-25 23:10
 comments: true
-categories: daily notes
+categories: [notes, octopress, octopress plugins]
 ---
 
 ### Tasks
