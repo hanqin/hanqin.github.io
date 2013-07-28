@@ -9,7 +9,8 @@
   <meta name="author" content="Han Qin">
 
   
-  <meta name="description" content="Tasks Added several plugins, including comments from disqus, my reading from douban, QR code and readability All these plugins and even more can be &hellip;">
+  <meta name="description" content="It can be tricky sometimes when adding an android library project in intellij or android studio.
+The reasons may vary from time to time but two I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +82,79 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/">Add an Android Library Project in Intellij or Android Studio</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-28T22:44:00+08:00" pubdate data-updated="true">Jul 28<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It can be tricky sometimes when adding an android library project in intellij or android studio.
+The reasons may vary from time to time but two I recently encountered are:</p>
+
+<ol>
+<li>Automatic update of project.properties is disabled in intellij, thus the android library project cannot be added.</li>
+<li>Creating a new library module in android studio, for an ant based project, Studio only creates a settings.gradle, but <em>forget</em> to change the project.properties.</li>
+</ol>
+
+
+<p>So far, the root cause is clear, the inconsistency between ide settings and android configs.</p>
+
+<ol>
+<li>You can manually update project.properties to a correct value</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>target=android-16
+</span><span class='line'>android.library.reference.1=../../actionbarsherlock</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>android.library=true
+</span><span class='line'>target=android-14</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>Remember to update settings in your IDE</li>
+</ol>
+
+
+<p><img class="center" src="/images/intellij_update_project_properties.png" title="image" alt="images"></p>
+
+<p>That&rsquo;s it.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -279,6 +353,10 @@
     <section>
   <h1>Blogging</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/">Add an Android Library Project in Intellij or Android Studio</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/07/26/octopress-on-heroku-day-2/">Octopress on Heroku - Day 2</a>

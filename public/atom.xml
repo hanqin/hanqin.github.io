@@ -4,7 +4,7 @@
   <title><![CDATA[Han Qin . Me]]></title>
   <link href="http://hanqin.herokuapp.com//atom.xml" rel="self"/>
   <link href="http://hanqin.herokuapp.com//"/>
-  <updated>2013-07-26T23:52:42+08:00</updated>
+  <updated>2013-07-28T23:37:45+08:00</updated>
   <id>http://hanqin.herokuapp.com//</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[add an android library project in intellij or android studio]]></title>
+    <link href="http://hanqin.herokuapp.com//blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/"/>
+    <updated>2013-07-28T22:44:00+08:00</updated>
+    <id>http://hanqin.herokuapp.com//blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio</id>
+    <content type="html"><![CDATA[<p>It can be tricky sometimes when adding an android library project in intellij or android studio.
+The reasons may vary from time to time but two I recently encountered are:</p>
+
+<ol>
+<li>Automatic update of project.properties is disabled in intellij, thus the android library project cannot be added.</li>
+<li>Creating a new library module in android studio, for an ant based project, Studio only creates a settings.gradle, but <em>forget</em> to change the project.properties.</li>
+</ol>
+
+
+<p>So far, the root cause is clear, the inconsistency between ide settings and android configs.</p>
+
+<ol>
+<li>You can manually update project.properties to a correct value</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>target=android-16
+</span><span class='line'>android.library.reference.1=../../actionbarsherlock</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>android.library=true
+</span><span class='line'>target=android-14</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>Remember to update settings in your IDE</li>
+</ol>
+
+
+<p><img class="center" src="http://hanqin.herokuapp.com//images/intellij_update_project_properties.png" title="image" alt="images"></p>
+
+<p>That&rsquo;s it.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[octopress on heroku - day 2]]></title>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: android studio | Han Qin . Me]]></title>
+  <link href="http://hanqin.herokuapp.com//blog/categories/android-studio/atom.xml" rel="self"/>
+  <link href="http://hanqin.herokuapp.com//"/>
+  <updated>2013-07-28T23:37:45+08:00</updated>
+  <id>http://hanqin.herokuapp.com//</id>
+  <author>
+    <name><![CDATA[Han Qin]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[add an android library project in intellij or android studio]]></title>
+    <link href="http://hanqin.herokuapp.com//blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/"/>
+    <updated>2013-07-28T22:44:00+08:00</updated>
+    <id>http://hanqin.herokuapp.com//blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio</id>
+    <content type="html"><![CDATA[<p>It can be tricky sometimes when adding an android library project in intellij or android studio.
+The reasons may vary from time to time but two I recently encountered are:</p>
+
+<ol>
+<li>Automatic update of project.properties is disabled in intellij, thus the android library project cannot be added.</li>
+<li>Creating a new library module in android studio, for an ant based project, Studio only creates a settings.gradle, but <em>forget</em> to change the project.properties.</li>
+</ol>
+
+
+<p>So far, the root cause is clear, the inconsistency between ide settings and android configs.</p>
+
+<ol>
+<li>You can manually update project.properties to a correct value
+<code>
+target=android-16
+android.library.reference.1=../../actionbarsherlock
+</code>
+and
+<code>
+android.library=true
+target=android-14
+</code></li>
+<li>Remember to update settings in your IDE</li>
+</ol>
+
+
+<p><img class="center" src="/images/intellij_update_project_properties.png" title="&lsquo;image&rsquo; &lsquo;images&rsquo;" ></p>
+
+<p>That&rsquo;s it.</p>
+]]></content>
+  </entry>
+  
+</feed>
