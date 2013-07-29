@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: android | Han Qin . Me]]></title>
-  <link href="http://hanqin.herokuapp.com//blog/categories/android/atom.xml" rel="self"/>
-  <link href="http://hanqin.herokuapp.com//"/>
-  <updated>2013-07-28T23:37:45+08:00</updated>
-  <id>http://hanqin.herokuapp.com//</id>
+  <link href="http://www.hanqin.me/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://www.hanqin.me/"/>
+  <updated>2013-07-29T22:32:20+08:00</updated>
+  <id>http://www.hanqin.me/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[add an android library project in intellij or android studio]]></title>
-    <link href="http://hanqin.herokuapp.com//blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/"/>
+    <link href="http://www.hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/"/>
     <updated>2013-07-28T22:44:00+08:00</updated>
-    <id>http://hanqin.herokuapp.com//blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio</id>
+    <id>http://www.hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio</id>
     <content type="html"><![CDATA[<p>It can be tricky sometimes when adding an android library project in intellij or android studio.
 The reasons may vary from time to time but two I recently encountered are:</p>
 

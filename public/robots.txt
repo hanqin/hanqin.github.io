@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://hanqin.herokuapp.com//sitemap.xml 
+Sitemap: http://www.hanqin.me/sitemap.xml 
