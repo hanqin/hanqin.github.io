@@ -4,7 +4,7 @@
   <title><![CDATA[Category: notes | Han Qin . Me]]></title>
   <link href="http://www.hanqin.me/blog/categories/notes/atom.xml" rel="self"/>
   <link href="http://www.hanqin.me/"/>
-  <updated>2013-07-29T22:32:20+08:00</updated>
+  <updated>2013-07-29T23:26:49+08:00</updated>
   <id>http://www.hanqin.me/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[send email in android]]></title>
+    <link href="http://www.hanqin.me/blog/2013/07/29/send-email-in-android/"/>
+    <updated>2013-07-29T22:45:00+08:00</updated>
+    <id>http://www.hanqin.me/blog/2013/07/29/send-email-in-android</id>
+    <content type="html"><![CDATA[<p>There are lots of topics about how to implement email function in android on Stackoverflow, and surprisingly, even for such a simple
+function, there are still many things to consider. I will try to summarize and explain in details here, a demo application is included as well.</p>
+
+<p>In brief, I find there are there ways.</p>
+
+<ol>
+<li><p>create a intent with <em>Action_SEND</em> and mimeType <em>message/rfc822</em>, the codes are listed below
+<code>java
+Intent intent = new Intent(Intent.ACTION_SEND);
+intent.setType("message/rfc822");
+intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"recipient@example.com"});
+intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+intent.putExtra(Intent.EXTRA_TEXT, text);
+activity.startActivity(Intent.createChooser(intent, "Send mail..."));
+</code>
+Few things to note here:</p></li>
+<li><p>mimeType should be set to <em>message/rfc822</em> rather than <em>text/plain</em>, otherwise there will be bunch of applications displayed in the chooser dialog.</p></li>
+</ol>
+
+
+<p>To be continued</p>
+
+<p>References:</p>
+
+<p><a href="http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application">http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application</a>
+<a href="http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android">http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android</a>
+<a href="http://developer.android.com/guide/components/intents-filters.html">http://developer.android.com/guide/components/intents-filters.html</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[add an android library project in intellij or android studio]]></title>

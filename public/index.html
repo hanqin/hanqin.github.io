@@ -9,8 +9,8 @@
   <meta name="author" content="Han Qin">
 
   
-  <meta name="description" content="It can be tricky sometimes when adding an android library project in intellij or android studio.
-The reasons may vary from time to time but two I &hellip;">
+  <meta name="description" content="There are lots of topics about how to implement email function in android on Stackoverflow, and surprisingly, even for such a simple
+function, there &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +82,80 @@ The reasons may vary from time to time but two I &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/29/send-email-in-android/">Send Email in Android</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-29T22:45:00+08:00" pubdate data-updated="true">Jul 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>There are lots of topics about how to implement email function in android on Stackoverflow, and surprisingly, even for such a simple
+function, there are still many things to consider. I will try to summarize and explain in details here, a demo application is included as well.</p>
+
+<p>In brief, I find there are there ways.</p>
+
+<ol>
+<li>create a intent with <em>Action_SEND</em> and mimeType <em>message/rfc822</em>, the codes are listed below</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_SEND</span><span class="o">);</span>
+</span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">setType</span><span class="o">(</span><span class="s">&quot;message/rfc822&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_EMAIL</span><span class="o">,</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="s">&quot;recipient@example.com&quot;</span><span class="o">});</span>
+</span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_SUBJECT</span><span class="o">,</span> <span class="n">subject</span><span class="o">);</span>
+</span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_TEXT</span><span class="o">,</span> <span class="n">text</span><span class="o">);</span>
+</span><span class='line'><span class="n">activity</span><span class="o">.</span><span class="na">startActivity</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">createChooser</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span> <span class="s">&quot;Send mail...&quot;</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Few things to note here:</p>
+
+<ul>
+<li>mimeType should be set to <em>message/rfc822</em> rather than <em>text/plain</em>, otherwise there will be bunch of applications displayed in the chooser dialog.</li>
+</ul>
+
+
+<p>To be continued</p>
+
+<p>References:</p>
+
+<p><a href="http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application">http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application</a>
+<a href="http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android">http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android</a>
+<a href="http://developer.android.com/guide/components/intents-filters.html">http://developer.android.com/guide/components/intents-filters.html</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -353,6 +427,10 @@ The reasons may vary from time to time but two I recently encountered are:</p>
     <section>
   <h1>Blogging</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/29/send-email-in-android/">Send Email in Android</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/">Add an Android Library Project in Intellij or Android Studio</a>

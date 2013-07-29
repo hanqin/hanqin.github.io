@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: android | Han Qin . Me]]></title>
-  <link href="http://www.hanqin.me/blog/categories/android/atom.xml" rel="self"/>
+  <title><![CDATA[Category: intent | Han Qin . Me]]></title>
+  <link href="http://www.hanqin.me/blog/categories/intent/atom.xml" rel="self"/>
   <link href="http://www.hanqin.me/"/>
   <updated>2013-07-29T23:26:49+08:00</updated>
   <id>http://www.hanqin.me/</id>
@@ -45,43 +45,6 @@ Few things to note here:</p></li>
 <p><a href="http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application">http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application</a>
 <a href="http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android">http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android</a>
 <a href="http://developer.android.com/guide/components/intents-filters.html">http://developer.android.com/guide/components/intents-filters.html</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[add an android library project in intellij or android studio]]></title>
-    <link href="http://www.hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/"/>
-    <updated>2013-07-28T22:44:00+08:00</updated>
-    <id>http://www.hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio</id>
-    <content type="html"><![CDATA[<p>It can be tricky sometimes when adding an android library project in intellij or android studio.
-The reasons may vary from time to time but two I recently encountered are:</p>
-
-<ol>
-<li>Automatic update of project.properties is disabled in intellij, thus the android library project cannot be added.</li>
-<li>Creating a new library module in android studio, for an ant based project, Studio only creates a settings.gradle, but <em>forget</em> to change the project.properties.</li>
-</ol>
-
-
-<p>So far, the root cause is clear, the inconsistency between ide settings and android configs.</p>
-
-<ol>
-<li>You can manually update project.properties to a correct value
-<code>
-target=android-16
-android.library.reference.1=../../actionbarsherlock
-</code>
-and
-<code>
-android.library=true
-target=android-14
-</code></li>
-<li>Remember to update settings in your IDE</li>
-</ol>
-
-
-<p><img class="center" src="/images/intellij_update_project_properties.png" title="&lsquo;image&rsquo; &lsquo;images&rsquo;" ></p>
-
-<p>That&rsquo;s it.</p>
 ]]></content>
   </entry>
   
