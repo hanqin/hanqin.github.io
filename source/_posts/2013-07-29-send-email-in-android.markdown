@@ -24,11 +24,12 @@ Few things to note here:
 
 + mimeType should be set to *message/rfc822* rather than *text/plain*, otherwise there will be bunch of applications displayed in the chooser dialog.
 
-
+To be continued.
 
 References:
 
 http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application
 http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android
+http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_(no_Intents)_in_Android
 http://developer.android.com/guide/components/intents-filters.html
 

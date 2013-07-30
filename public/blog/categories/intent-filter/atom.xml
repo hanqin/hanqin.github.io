@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: intent filter | Han Qin . Me]]></title>
-  <link href="http://www.hanqin.me/blog/categories/intent-filter/atom.xml" rel="self"/>
-  <link href="http://www.hanqin.me/"/>
-  <updated>2013-07-30T22:50:43+08:00</updated>
-  <id>http://www.hanqin.me/</id>
+  <link href="http://hanqin.me/blog/categories/intent-filter/atom.xml" rel="self"/>
+  <link href="http://hanqin.me/"/>
+  <updated>2013-07-30T23:48:46+08:00</updated>
+  <id>http://hanqin.me/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[send email in android]]></title>
-    <link href="http://www.hanqin.me/blog/2013/07/29/send-email-in-android/"/>
+    <link href="http://hanqin.me/blog/2013/07/29/send-email-in-android/"/>
     <updated>2013-07-29T22:45:00+08:00</updated>
-    <id>http://www.hanqin.me/blog/2013/07/29/send-email-in-android</id>
+    <id>http://hanqin.me/blog/2013/07/29/send-email-in-android</id>
     <content type="html"><![CDATA[<p>There are lots of topics about how to implement email function in android on Stackoverflow, and surprisingly, even for such a simple
 function, there are still many things to consider. I will try to summarize and explain in details here, a demo application is included as well.</p>
 
@@ -38,10 +38,13 @@ Few things to note here:</p></li>
 </ol>
 
 
+<p>To be continued.</p>
+
 <p>References:</p>
 
 <p><a href="http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application">http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application</a>
 <a href="http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android">http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android</a>
+<a href="http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_">http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_</a>(no_Intents)_in_Android
 <a href="http://developer.android.com/guide/components/intents-filters.html">http://developer.android.com/guide/components/intents-filters.html</a></p>
 ]]></content>
   </entry>
