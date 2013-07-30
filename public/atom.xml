@@ -4,7 +4,7 @@
   <title><![CDATA[Han Qin . Me]]></title>
   <link href="http://hanqin.me/atom.xml" rel="self"/>
   <link href="http://hanqin.me/"/>
-  <updated>2013-07-30T23:48:46+08:00</updated>
+  <updated>2013-07-31T00:01:03+08:00</updated>
   <id>http://hanqin.me/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
@@ -19,7 +19,7 @@
     <updated>2013-07-29T22:45:00+08:00</updated>
     <id>http://hanqin.me/blog/2013/07/29/send-email-in-android</id>
     <content type="html"><![CDATA[<p>There are lots of topics about how to implement email function in android on Stackoverflow, and surprisingly, even for such a simple
-function, there are still many things to consider. I will try to summarize and explain in details here, a demo application is included as well.</p>
+function, there are still many things to consider. I will try to summarize and explain in details here, a <a href="https://github.com/hanqin/AndroidEmailDemo">demo application</a> is included as well.</p>
 
 <p>In brief, I find there are there ways.</p>
 
@@ -51,6 +51,10 @@ function, there are still many things to consider. I will try to summarize and e
 
 
 <p>To be continued.</p>
+
+<p>Demo application:</p>
+
+<p><a href="https://github.com/hanqin/AndroidEmailDemo">https://github.com/hanqin/AndroidEmailDemo</a></p>
 
 <p>References:</p>
 

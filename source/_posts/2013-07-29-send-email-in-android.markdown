@@ -7,7 +7,7 @@ categories: [notes, android, intent, intent filter, email]
 ---
 
 There are lots of topics about how to implement email function in android on Stackoverflow, and surprisingly, even for such a simple
-function, there are still many things to consider. I will try to summarize and explain in details here, a demo application is included as well.
+function, there are still many things to consider. I will try to summarize and explain in details here, a [demo application](https://github.com/hanqin/AndroidEmailDemo) is included as well.
 
 In brief, I find there are there ways.
 
@@ -25,6 +25,10 @@ Few things to note here:
 + mimeType should be set to *message/rfc822* rather than *text/plain*, otherwise there will be bunch of applications displayed in the chooser dialog.
 
 To be continued.
+
+Demo application:
+
+https://github.com/hanqin/AndroidEmailDemo
 
 References:
 
