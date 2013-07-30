@@ -24,7 +24,7 @@ Few things to note here:
 
 + mimeType should be set to *message/rfc822* rather than *text/plain*, otherwise there will be bunch of applications displayed in the chooser dialog.
 
-To be continued
+
 
 References:
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: intent filter | Han Qin . Me]]></title>
   <link href="http://www.hanqin.me/blog/categories/intent-filter/atom.xml" rel="self"/>
   <link href="http://www.hanqin.me/"/>
-  <updated>2013-07-29T23:26:49+08:00</updated>
+  <updated>2013-07-30T22:50:43+08:00</updated>
   <id>http://www.hanqin.me/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
@@ -37,8 +37,6 @@ Few things to note here:</p></li>
 <li><p>mimeType should be set to <em>message/rfc822</em> rather than <em>text/plain</em>, otherwise there will be bunch of applications displayed in the chooser dialog.</p></li>
 </ol>
 
-
-<p>To be continued</p>
 
 <p>References:</p>
 
