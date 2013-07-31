@@ -1,37 +1,37 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://hanqin.me/blog/2013/07/25/this-is-a-test/</loc>
+        <loc>http://www.hanqin.me/blog/2013/07/25/this-is-a-test/</loc>
         <lastmod>2013-07-26T23:01:46+08:00</lastmod>
     </url>
     <url>
-        <loc>http://hanqin.me/blog/2013/07/25/octopress-on-heroku-day-1/</loc>
+        <loc>http://www.hanqin.me/blog/2013/07/25/octopress-on-heroku-day-1/</loc>
         <lastmod>2013-07-26T23:05:06+08:00</lastmod>
     </url>
     <url>
-        <loc>http://hanqin.me/blog/2013/07/26/octopress-on-heroku-day-2/</loc>
+        <loc>http://www.hanqin.me/blog/2013/07/26/octopress-on-heroku-day-2/</loc>
         <lastmod>2013-07-26T23:50:37+08:00</lastmod>
     </url>
     <url>
         <loc>
-            http://hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/
+            http://www.hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/
         </loc>
         <lastmod>2013-07-28T23:37:44+08:00</lastmod>
     </url>
     <url>
-        <loc>http://hanqin.me/blog/2013/07/29/send-email-in-android/</loc>
+        <loc>http://www.hanqin.me/blog/2013/07/29/send-email-in-android/</loc>
         <lastmod>2013-07-31T00:00:55+08:00</lastmod>
     </url>
     <url>
-        <loc>http://hanqin.me/blog/archives/</loc>
+        <loc>http://www.hanqin.me/blog/archives/</loc>
         <lastmod>2013-07-31T00:00:55+08:00</lastmod>
     </url>
     <url>
-        <loc>http://hanqin.me/</loc>
+        <loc>http://www.hanqin.me/</loc>
         <lastmod>2013-07-31T00:00:55+08:00</lastmod>
     </url>
     <url>
-        <loc>http://hanqin.me/robots.txt</loc>
+        <loc>http://www.hanqin.me/robots.txt</loc>
         <lastmod>2013-07-24T22:25:54+08:00</lastmod>
     </url>
 </urlset>
