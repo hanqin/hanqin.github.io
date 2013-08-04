@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: intellij | Han Qin . Me]]></title>
-  <link href="http://www.hanqin.me/blog/categories/intellij/atom.xml" rel="self"/>
-  <link href="http://www.hanqin.me/"/>
-  <updated>2013-07-31T10:08:11+08:00</updated>
-  <id>http://www.hanqin.me/</id>
+  <link href="http://hanqin.me/blog/categories/intellij/atom.xml" rel="self"/>
+  <link href="http://hanqin.me/"/>
+  <updated>2013-08-04T23:20:17+08:00</updated>
+  <id>http://hanqin.me/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[add an android library project in intellij or android studio]]></title>
-    <link href="http://www.hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/"/>
+    <link href="http://hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/"/>
     <updated>2013-07-28T22:44:00+08:00</updated>
-    <id>http://www.hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio</id>
+    <id>http://hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio</id>
     <content type="html"><![CDATA[<p>It can be tricky sometimes when adding an android library project in intellij or android studio.
 The reasons may vary from time to time but two I recently encountered are:</p>
 

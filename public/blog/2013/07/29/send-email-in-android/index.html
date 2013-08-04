@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>send email in android - Han Qin . Me</title>
+  <title>implement email function in android - Han Qin . Me</title>
   <meta name="author" content="Han Qin">
 
   
-  <meta name="description" content="There are lots of topics about how to implement email function in android on Stackoverflow, and surprisingly, even for such a simple
-function, there &hellip;">
+  <meta name="description" content="There are several ways to implement email function in android, with their own pros and cons. I will try to summarize everything here, and you can &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ function, there &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.hanqin.me/blog/2013/07/29/send-email-in-android">
+  <link rel="canonical" href="http://hanqin.me/blog/2013/07/29/send-email-in-android">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Han Qin . Me" type="application/atom+xml">
@@ -67,7 +66,7 @@ function, there &hellip;">
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:www.hanqin.me" />
+    <input type="hidden" name="q" value="site:hanqin.me" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -85,7 +84,7 @@ function, there &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Send Email in Android</h1>
+      <h1 class="entry-title">Implement Email Function in Android</h1>
     
     
       <p class="meta">
@@ -108,14 +107,18 @@ function, there &hellip;">
   </header>
 
 
-<div class="entry-content"><p>There are lots of topics about how to implement email function in android on Stackoverflow, and surprisingly, even for such a simple
-function, there are still many things to consider. I will try to summarize and explain in details here, a <a href="https://github.com/hanqin/AndroidEmailDemo">demo application</a> is included as well.</p>
+<div class="entry-content"><p>There are several ways to implement email function in android, with their own pros and cons. I will try to summarize everything here, and you can find a <a href="https://github.com/hanqin/AndroidEmailDemo">demo application</a> at the end.</p>
 
-<p>In brief, I find there are there ways.</p>
+<h3>1) Use installed mail apps</h3>
 
-<ol>
-<li>create a intent with <em>Action_SEND</em> and mimeType <em>message/rfc822</em>, the codes are listed below</li>
-</ol>
+<ul>
+<li><p>Create an intent with <em>ACTION_SEND</em> and <em>mailto</em> scheme:</p></li>
+<li><p>MimeType can be set to <em>message/rfc822</em> instead of <em>text/plain</em>, to limit applications displayed in the chooser dialog.</p></li>
+<li><p><em>message/rfc822</em> stands for</p>
+
+<blockquote><p>Email; EML files, MIME files, MHT files, MHTML files; Defined in RFC 2045 and RFC 2046</p></blockquote></li>
+<li><p>There is also an enhanced version, from which you can determine what will be displayed in the chooser dialog.</p></li>
+</ul>
 
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -124,32 +127,36 @@ function, there are still many things to consider. I will try to summarize and e
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_SEND</span><span class="o">);</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_SEND</span><span class="o">,</span> <span class="n">Uri</span><span class="o">.</span><span class="na">fromParts</span><span class="o">(</span><span class="s">&quot;mailto&quot;</span><span class="o">,</span> <span class="n">TO_ME</span><span class="o">,</span> <span class="kc">null</span><span class="o">));</span>
 </span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">setType</span><span class="o">(</span><span class="s">&quot;message/rfc822&quot;</span><span class="o">);</span>
-</span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_EMAIL</span><span class="o">,</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="s">&quot;recipient@example.com&quot;</span><span class="o">});</span>
+</span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_EMAIL</span><span class="o">,</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="n">TO_ME</span><span class="o">});</span>
 </span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_SUBJECT</span><span class="o">,</span> <span class="n">subject</span><span class="o">);</span>
 </span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_TEXT</span><span class="o">,</span> <span class="n">text</span><span class="o">);</span>
 </span><span class='line'><span class="n">activity</span><span class="o">.</span><span class="na">startActivity</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">createChooser</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span> <span class="s">&quot;Send mail...&quot;</span><span class="o">));</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Few things to note here:</p>
+<h3>2) Use the java mail api</h3>
 
-<ul>
-<li>mimeType should be set to <em>message/rfc822</em> rather than <em>text/plain</em>, otherwise there will be bunch of applications displayed in the chooser dialog.</li>
-</ul>
+<p>(ported to android by <a href="http://www.jondev.net/">Jon Simon</a>).</p>
 
+<p>Firstly, you will need to download three jar files from <a href="https://code.google.com/p/javamail-android/">https://code.google.com/p/javamail-android/</a> .</p>
 
-<p>To be continued.</p>
+<p>Then, simply follow the code provided in the demo application, or you can refer to <a href="http://www.tutorialspoint.com/java/java_sending_email.htm">http://www.tutorialspoint.com/java/java_sending_email.htm</a> for a comprehensive guide.</p>
 
-<p>Demo application:</p>
+<h3>3) Use specifically built backend Api</h3>
+
+<p>Most applications have a backend service, it is easy to add an api that collects info from handsets and send mail on the server side.</p>
+
+<h4>Demo application: (last update on Aug, 4, 2013)</h4>
 
 <p><a href="https://github.com/hanqin/AndroidEmailDemo">https://github.com/hanqin/AndroidEmailDemo</a></p>
 
-<p>References:</p>
+<h4>References:</h4>
 
 <p><a href="http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application">http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application</a>
 <a href="http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android">http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android</a>
+<a href="http://en.wikipedia.org/wiki/Internet_media_type">http://en.wikipedia.org/wiki/Internet_media_type</a>
 <a href="http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_">http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_</a>(no_Intents)_in_Android
 <a href="http://developer.android.com/guide/components/intents-filters.html">http://developer.android.com/guide/components/intents-filters.html</a></p>
 </div>
@@ -229,7 +236,7 @@ function, there are still many things to consider. I will try to summarize and e
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/07/29/send-email-in-android/">Send Email in Android</a>
+        <a href="/blog/2013/07/29/send-email-in-android/">Implement Email Function in Android</a>
       </li>
     
       <li class="post">
@@ -289,7 +296,7 @@ function, there are still many things to consider. I will try to summarize and e
 
 <section>
 <h1>QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr></h1>
-<a href="http://www.hanqin.me/blog/2013/07/29/send-email-in-android/"><img src="http://chart.apis.google.com/chart?chs=112x112&cht=qr&chld=|0&chco=736F6E&chl=http://www.hanqin.me/blog/2013/07/29/send-email-in-android/" alt="post-qrcode"></a></section>
+<a href="http://hanqin.me/blog/2013/07/29/send-email-in-android/"><img src="http://chart.apis.google.com/chart?chs=112x112&cht=qr&chld=|0&chco=736F6E&chl=http://hanqin.me/blog/2013/07/29/send-email-in-android/" alt="post-qrcode"></a></section>
 
 <section class="googleplus googleplus-hidden">
   <h1>
@@ -321,8 +328,8 @@ function, there are still many things to consider. I will try to summarize and e
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.hanqin.me/blog/2013/07/29/send-email-in-android/';
-        var disqus_url = 'http://www.hanqin.me/blog/2013/07/29/send-email-in-android/';
+        var disqus_identifier = 'http://hanqin.me/blog/2013/07/29/send-email-in-android/';
+        var disqus_url = 'http://hanqin.me/blog/2013/07/29/send-email-in-android/';
         var disqus_script = 'embed.js';
       
     (function () {

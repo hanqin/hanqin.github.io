@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: intent filter | Han Qin . Me]]></title>
-  <link href="http://www.hanqin.me/blog/categories/intent-filter/atom.xml" rel="self"/>
-  <link href="http://www.hanqin.me/"/>
-  <updated>2013-07-31T10:08:11+08:00</updated>
-  <id>http://www.hanqin.me/</id>
+  <link href="http://hanqin.me/blog/categories/intent-filter/atom.xml" rel="self"/>
+  <link href="http://hanqin.me/"/>
+  <updated>2013-08-04T23:20:17+08:00</updated>
+  <id>http://hanqin.me/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
     
@@ -14,40 +14,54 @@
 
   
   <entry>
-    <title type="html"><![CDATA[send email in android]]></title>
-    <link href="http://www.hanqin.me/blog/2013/07/29/send-email-in-android/"/>
+    <title type="html"><![CDATA[implement email function in android]]></title>
+    <link href="http://hanqin.me/blog/2013/07/29/send-email-in-android/"/>
     <updated>2013-07-29T22:45:00+08:00</updated>
-    <id>http://www.hanqin.me/blog/2013/07/29/send-email-in-android</id>
-    <content type="html"><![CDATA[<p>There are lots of topics about how to implement email function in android on Stackoverflow, and surprisingly, even for such a simple
-function, there are still many things to consider. I will try to summarize and explain in details here, a <a href="https://github.com/hanqin/AndroidEmailDemo">demo application</a> is included as well.</p>
+    <id>http://hanqin.me/blog/2013/07/29/send-email-in-android</id>
+    <content type="html"><![CDATA[<p>There are several ways to implement email function in android, with their own pros and cons. I will try to summarize everything here, and you can find a <a href="https://github.com/hanqin/AndroidEmailDemo">demo application</a> at the end.</p>
 
-<p>In brief, I find there are there ways.</p>
+<h3>1) Use installed mail apps</h3>
 
-<ol>
-<li><p>create a intent with <em>Action_SEND</em> and mimeType <em>message/rfc822</em>, the codes are listed below
-<code>java
-Intent intent = new Intent(Intent.ACTION_SEND);
+<ul>
+<li><p>Create an intent with <em>ACTION_SEND</em> and <em>mailto</em> scheme:</p></li>
+<li><p>MimeType can be set to <em>message/rfc822</em> instead of <em>text/plain</em>, to limit applications displayed in the chooser dialog.</p></li>
+<li><p><em>message/rfc822</em> stands for</p>
+
+<blockquote><p>Email; EML files, MIME files, MHT files, MHTML files; Defined in RFC 2045 and RFC 2046</p></blockquote></li>
+<li><p>There is also an enhanced version, from which you can determine what will be displayed in the chooser dialog.</p></li>
+</ul>
+
+
+<p><code>java
+Intent intent = new Intent(Intent.ACTION_SEND, Uri.fromParts("mailto", TO_ME, null));
 intent.setType("message/rfc822");
-intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"recipient@example.com"});
+intent.putExtra(Intent.EXTRA_EMAIL, new String[]{TO_ME});
 intent.putExtra(Intent.EXTRA_SUBJECT, subject);
 intent.putExtra(Intent.EXTRA_TEXT, text);
 activity.startActivity(Intent.createChooser(intent, "Send mail..."));
-</code>
-Few things to note here:</p></li>
-<li><p>mimeType should be set to <em>message/rfc822</em> rather than <em>text/plain</em>, otherwise there will be bunch of applications displayed in the chooser dialog.</p></li>
-</ol>
+</code></p>
 
+<h3>2) Use the java mail api</h3>
 
-<p>To be continued.</p>
+<p>(ported to android by <a href="http://www.jondev.net/">Jon Simon</a>).</p>
 
-<p>Demo application:</p>
+<p>Firstly, you will need to download three jar files from <a href="https://code.google.com/p/javamail-android/">https://code.google.com/p/javamail-android/</a> .</p>
+
+<p>Then, simply follow the code provided in the demo application, or you can refer to <a href="http://www.tutorialspoint.com/java/java_sending_email.htm">http://www.tutorialspoint.com/java/java_sending_email.htm</a> for a comprehensive guide.</p>
+
+<h3>3) Use specifically built backend Api</h3>
+
+<p>Most applications have a backend service, it is easy to add an api that collects info from handsets and send mail on the server side.</p>
+
+<h4>Demo application: (last update on Aug, 4, 2013)</h4>
 
 <p><a href="https://github.com/hanqin/AndroidEmailDemo">https://github.com/hanqin/AndroidEmailDemo</a></p>
 
-<p>References:</p>
+<h4>References:</h4>
 
 <p><a href="http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application">http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application</a>
 <a href="http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android">http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android</a>
+<a href="http://en.wikipedia.org/wiki/Internet_media_type">http://en.wikipedia.org/wiki/Internet_media_type</a>
 <a href="http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_">http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_</a>(no_Intents)_in_Android
 <a href="http://developer.android.com/guide/components/intents-filters.html">http://developer.android.com/guide/components/intents-filters.html</a></p>
 ]]></content>
