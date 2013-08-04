@@ -4,6 +4,8 @@ title: "octopress on heroku - day 1"
 date: 2013-07-25 23:10
 comments: true
 categories: [notes, octopress, octopress plugins]
+keywords: octopress, octopress plugins
+description: setup octopress on heroku
 ---
 
 ### Tasks

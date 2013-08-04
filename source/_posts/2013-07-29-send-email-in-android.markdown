@@ -4,6 +4,8 @@ title: "implement email function in android"
 date: 2013-07-29 22:45
 comments: true
 categories: [notes, android, intent, intent filter, email]
+keywords: android email, mimeType, intent, mailto
+description: How to implement email function in android
 ---
 
 There are several ways to implement email function in android, with their own pros and cons. I will try to summarize everything here, and you can find a [demo application](https://github.com/hanqin/AndroidEmailDemo) at the end.

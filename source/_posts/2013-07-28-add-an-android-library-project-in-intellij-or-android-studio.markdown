@@ -4,6 +4,8 @@ title: "add an android library project in intellij or android studio"
 date: 2013-07-28 22:44
 comments: true
 categories: [notes, android, android library project, android studio, intellij]
+keywords: android library project, intellij, android studio
+description: How to implement email function in android
 ---
 
 It can be tricky sometimes when adding an android library project in intellij or android studio.
