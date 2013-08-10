@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Han Qin . Me</title>
+  <title>android toast usages and tests - Han Qin . Me</title>
   <meta name="author" content="Han Qin">
 
   
-  <meta name="description" content="Usage tips I have been perplexed for a long time by the duration parameter of android Toast function,
-before I noticed the warning message from &hellip;">
-  
+  <meta name="description" content="tips for android toast and toast testing">
+  <meta name="keywords" content="android, android toast, android toast duration, robolectric, robolectric ShadowToast">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -19,7 +18,7 @@ before I noticed the warning message from &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hanqin.me">
+  <link rel="canonical" href="http://hanqin.me/blog/2013/08/10/android-toast">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Han Qin . Me" type="application/atom+xml">
@@ -80,15 +79,12 @@ before I noticed the warning message from &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/08/10/android-toast/">Android Toast Usages and Tests</a></h1>
+      <h1 class="entry-title">Android Toast Usages and Tests</h1>
     
     
       <p class="meta">
@@ -111,7 +107,7 @@ before I noticed the warning message from &hellip;">
   </header>
 
 
-  <div class="entry-content"><h3>Usage tips</h3>
+<div class="entry-content"><h3>Usage tips</h3>
 
 <p>I have been perplexed for a long time by the duration parameter of android Toast function,
 before I noticed the warning message from android studio</p>
@@ -197,109 +193,16 @@ before I noticed the warning message from android studio</p>
 
 <p>For busy developers who don&rsquo;t have time to look at source codes of robolectric. :)</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/29/send-email-in-android/">Implement Email Function in Android</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Han Qin</span></span>
 
-<time datetime="2013-07-29T22:45:00+08:00" pubdate data-updated="true">Jul 29<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There are several ways to implement email function in android, with their own pros and cons. I will try to summarize everything here, and you can find a <a href="https://github.com/hanqin/AndroidEmailDemo">demo application</a> at the end.</p>
-
-<h3>1) Use installed mail apps</h3>
-
-<ul>
-<li><p>Create an intent with <em>ACTION_SEND</em> and <em>mailto</em> scheme:</p></li>
-<li><p>MimeType can be set to <em>message/rfc822</em> instead of <em>text/plain</em>, to limit applications displayed in the chooser dialog.</p></li>
-<li><p><em>message/rfc822</em> stands for</p>
-
-<blockquote><p>Email; EML files, MIME files, MHT files, MHTML files; Defined in RFC 2045 and RFC 2046</p></blockquote></li>
-<li><p>There is also an enhanced version, from which you can determine what will be displayed in the chooser dialog.</p></li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_SEND</span><span class="o">,</span> <span class="n">Uri</span><span class="o">.</span><span class="na">fromParts</span><span class="o">(</span><span class="s">&quot;mailto&quot;</span><span class="o">,</span> <span class="n">TO_ME</span><span class="o">,</span> <span class="kc">null</span><span class="o">));</span>
-</span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">setType</span><span class="o">(</span><span class="s">&quot;message/rfc822&quot;</span><span class="o">);</span>
-</span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_EMAIL</span><span class="o">,</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="n">TO_ME</span><span class="o">});</span>
-</span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_SUBJECT</span><span class="o">,</span> <span class="n">subject</span><span class="o">);</span>
-</span><span class='line'><span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_TEXT</span><span class="o">,</span> <span class="n">text</span><span class="o">);</span>
-</span><span class='line'><span class="n">activity</span><span class="o">.</span><span class="na">startActivity</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">createChooser</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span> <span class="s">&quot;Send mail...&quot;</span><span class="o">));</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>2) Use the java mail api</h3>
-
-<p>(ported to android by <a href="http://www.jondev.net/">Jon Simon</a>).</p>
-
-<p>Firstly, you will need to download three jar files from <a href="https://code.google.com/p/javamail-android/">https://code.google.com/p/javamail-android/</a> .</p>
-
-<p>Then, simply follow the code provided in the demo application, or you can refer to <a href="http://www.tutorialspoint.com/java/java_sending_email.htm">http://www.tutorialspoint.com/java/java_sending_email.htm</a> for a comprehensive guide.</p>
-
-<h3>3) Use specifically built backend Api</h3>
-
-<p>Most applications have a backend service, it is easy to add an api that collects info from handsets and send mail on the server side.</p>
-
-<h4>Demo application: (last update on Aug, 4, 2013)</h4>
-
-<p><a href="https://github.com/hanqin/AndroidEmailDemo">https://github.com/hanqin/AndroidEmailDemo</a></p>
-
-<h4>References:</h4>
-
-<p><a href="http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application">http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application</a>
-<a href="http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android">http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android</a>
-<a href="http://en.wikipedia.org/wiki/Internet_media_type">http://en.wikipedia.org/wiki/Internet_media_type</a>
-<a href="http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_">http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_</a>(no_Intents)_in_Android
-<a href="http://developer.android.com/guide/components/intents-filters.html">http://developer.android.com/guide/components/intents-filters.html</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/">Add an Android Library Project in Intellij or Android Studio</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -311,250 +214,54 @@ before I noticed the warning message from android studio</p>
   
 
 
-<time datetime="2013-07-28T22:44:00+08:00" pubdate data-updated="true">Jul 28<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It can be tricky sometimes when adding an android library project in intellij or android studio.
-The reasons may vary from time to time but two I recently encountered are:</p>
-
-<ol>
-<li>Automatic update of project.properties is disabled in intellij, thus the android library project cannot be added.</li>
-<li>Creating a new library module in android studio, for an ant based project, Studio only creates a settings.gradle, but <em>forget</em> to change the project.properties.</li>
-</ol>
-
-
-<p>So far, the root cause is clear, the inconsistency between ide settings and android configs.</p>
-
-<ol>
-<li>You can manually update project.properties to a correct value</li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>target=android-16
-</span><span class='line'>android.library.reference.1=../../actionbarsherlock</span></code></pre></td></tr></table></div></figure>
-
-
-<p>and</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>android.library=true
-</span><span class='line'>target=android-14</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li>Remember to update settings in your IDE</li>
-</ol>
-
-
-<p><img class="center" src="/images/intellij_update_project_properties.png" title="image" alt="images"></p>
-
-<p>That&rsquo;s it.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-08-10T11:37:00+08:00" pubdate data-updated="true">Aug 10<span>th</span>, 2013</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/26/octopress-on-heroku-day-2/">Octopress on Heroku - Day 2</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/notes/'>notes</a>, <a class='category' href='/blog/categories/robolectric/'>robolectric</a>
+  
+</span>
 
 
-<time datetime="2013-07-26T23:40:00+08:00" pubdate data-updated="true">Jul 26<span>th</span>, 2013</time>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><h3>Tasks</h3>
-
-<ol>
-<li>Added several plugins, including comments from disqus, my reading from douban, QR code and readability
-
-<ul>
-<li>All these plugins and <em>even more</em> can be found <a href="https://github.com/imathis/octopress/wiki/3rd-party-plugins">here</a></li>
-</ul>
-</li>
-</ol>
-
-
-<h3>Problems</h3>
-
-<ol>
-<li>The explanation for Douban plugin is misleading, fixed and sent a pull request</li>
-</ol>
-
-
-<h3>Next</h3>
-
-<ol>
-<li>Use sub modules to manage third party plugins?</li>
-<li>A better place for facebook like and twitter buttons?</li>
-<li>Themes update</li>
-<li>Blogs!</li>
-</ol>
-
+      <div class="sharing">
+    
+    
+    
+    
+    
+    <div class="rdbWrapper" data-show-read="1" data-show-send-to-kindle="1" data-show-print="1" data-show-email="0"
+         data-orientation="0" data-version="1"></div>
+    <script type="text/javascript">(function () {
+        var s = document.getElementsByTagName("script")[0], rdb = document.createElement("script");
+        rdb.type = "text/javascript";
+        rdb.async = true;
+        rdb.src = document.location.protocol + "//www.readability.com/embed.js";
+        s.parentNode.insertBefore(rdb, s);
+    })();</script>
+    
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/25/octopress-on-heroku-day-1/">Octopress on Heroku - Day 1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-25T23:10:00+08:00" pubdate data-updated="true">Jul 25<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Tasks</h3>
-
-<ol>
-<li>Setup <a href="http://octopress.org/">octopress</a> according to the <a href="http://octopress.org/docs/">documentation</a></li>
-<li>Update blog configuration, ruby version as well(required by heroku)</li>
-<li>Created a <a href="http://hanqin.herokuapp.com/blog/2013/07/25/this-is-a-test/">test blog</a></li>
-<li>Update google analytics
-
-<ul>
-<li>Thanks to this <a href="http://stefanalfbo.github.io/blog/2013/04/17/octopress-google-analytics-github-pages/">article</a></li>
-</ul>
-</li>
-<li>Markdown <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-headers">cheat sheet</a></li>
-</ol>
-
-
-<h3>Problems</h3>
-
-<ol>
-<li>Google analytics not working, solution as mentioned above</li>
-<li>Slow connection to heroku</li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git push heroku master</span></code></pre></td></tr></table></div></figure>
-
-
-<p>but only got Operation/Connecting timed out error. To fix the issue, manually add ~/.ssh/config, and put following lines in it:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Host heroku.com
-</span><span class='line'>User freemember007
-</span><span class='line'>Hostname 107.21.95.3
-</span><span class='line'>PreferredAuthentications publickey
-</span><span class='line'>IdentityFile ~/.ssh/id_rsa
-</span><span class='line'>port 22</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Thanks to this <a href="http://ruby-china.org/topics/10813">article</a></p>
-
-<h3>Next</h3>
-
-<ol>
-<li>Comment</li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+        <a class="basic-alignment left" href="/blog/2013/07/29/send-email-in-android/" title="Previous Post: implement email function in android">&laquo; implement email function in android</a>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/25/this-is-a-test/">This Is a Test</a></h1>
-    
-    
-      <p class="meta">
-        
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-25T22:06:00+08:00" pubdate data-updated="true">Jul 25<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is a test</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  
-  
+  </section>
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -587,7 +294,7 @@ The reasons may vary from time to time but two I recently encountered are:</p>
 <section>
   <h1>Coding</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/hanqin">@hanqin</a> on GitHub
@@ -622,7 +329,7 @@ The reasons may vary from time to time but two I recently encountered are:</p>
 
 <section>
 <h1>QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr></h1>
-<a href="http://hanqin.me/index.html"><img src="http://chart.apis.google.com/chart?chs=112x112&cht=qr&chld=|0&chco=736F6E&chl=http://hanqin.me/index.html" alt="post-qrcode"></a></section>
+<a href="http://hanqin.me/blog/2013/08/10/android-toast/"><img src="http://chart.apis.google.com/chart?chs=112x112&cht=qr&chld=|0&chco=736F6E&chl=http://hanqin.me/blog/2013/08/10/android-toast/" alt="post-qrcode"></a></section>
 
 <section class="googleplus googleplus-hidden">
   <h1>
@@ -638,6 +345,7 @@ The reasons may vary from time to time but two I recently encountered are:</p>
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -652,7 +360,10 @@ The reasons may vary from time to time but two I recently encountered are:</p>
       var disqus_shortname = 'hanqin';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://hanqin.me/blog/2013/08/10/android-toast/';
+        var disqus_url = 'http://hanqin.me/blog/2013/08/10/android-toast/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

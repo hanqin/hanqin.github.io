@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: robolectric | Han Qin . Me]]></title>
+  <link href="http://hanqin.me/blog/categories/robolectric/atom.xml" rel="self"/>
+  <link href="http://hanqin.me/"/>
+  <updated>2013-08-10T12:23:42+08:00</updated>
+  <id>http://hanqin.me/</id>
+  <author>
+    <name><![CDATA[Han Qin]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[android toast usages and tests]]></title>
+    <link href="http://hanqin.me/blog/2013/08/10/android-toast/"/>
+    <updated>2013-08-10T11:37:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/08/10/android-toast</id>
+    <content type="html"><![CDATA[<h3>Usage tips</h3>
+
+<p>I have been perplexed for a long time by the duration parameter of android Toast function,
+before I noticed the warning message from android studio</p>
+
+<p><img class="center" src="/images/android_studio_magic_constant_warning.png" title="&lsquo;image&rsquo; &lsquo;images&rsquo;" ></p>
+
+<p>The right way is</p>
+
+<p><code>java
+Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_LONG).show();
+</code></p>
+
+<p>or</p>
+
+<p><code>java
+Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_SHORT).show();
+</code></p>
+
+<h3>Test</h3>
+
+<p>I will demonstrate how to test toast function with <a href="http://robolectric.org/">Robolectric</a></p>
+
+<p>1, For default toast message
+<code>java
+Toast toast = ShadowToast.getLatestToast();
+String text = Robolectric.shadowOf(toast).text;
+</code></p>
+
+<p>Also, you can use
+<code>java
+String text = ShadowToast.getTextOfLatestToast();
+</code></p>
+
+<p>To check shown toast count
+<code>java
+int count = ShadowToast.shownToastCount();
+</code></p>
+
+<p>To verify a toast message has been displayed
+<code>java
+CharSequence message = "custom message"
+boolean showed = ShadowToast.showedToast(message);
+</code></p>
+
+<p>To get all shown toasts
+<code>java
+List&lt;Toast&gt; toasts = Robolectric.getShadowApplication().getShownToasts();
+</code></p>
+
+<p>To reset all shown toasts list
+<code>java
+ShadowToast.reset(); // or..
+Robolectric.getShadowApplication().getShownToasts().clear();
+</code></p>
+
+<p>2, For custom toasts
+<code>java
+CharSequence message = "custom message";
+int layoutResourceIdToCheckForMessage = R.id.custom_toast_text_view_id;
+boolean showed = ShadowToast.showedCustomToast(message, layoutResourceIdToCheckForMessage);
+</code></p>
+
+<p>For busy developers who don&rsquo;t have time to look at source codes of robolectric. :)</p>
+]]></content>
+  </entry>
+  
+</feed>

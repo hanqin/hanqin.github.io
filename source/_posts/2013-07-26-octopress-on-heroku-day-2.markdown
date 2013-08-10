@@ -3,7 +3,7 @@ layout: post
 title: "octopress on heroku - day 2"
 date: 2013-07-26 23:40
 comments: true
-categories: [notes, octopress, octopress plugins]
+categories: [notes, octopress]
 keywords: octopress, octopress plugins
 description: setup octopress on heroku
 ---

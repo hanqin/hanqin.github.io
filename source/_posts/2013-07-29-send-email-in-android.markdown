@@ -3,7 +3,7 @@ layout: post
 title: "implement email function in android"
 date: 2013-07-29 22:45
 comments: true
-categories: [notes, android, intent, intent filter, email]
+categories: [notes, android]
 keywords: android email, mimeType, intent, mailto
 description: How to implement email function in android
 ---

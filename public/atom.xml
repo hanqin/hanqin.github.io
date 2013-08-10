@@ -4,7 +4,7 @@
   <title><![CDATA[Han Qin . Me]]></title>
   <link href="http://hanqin.me/atom.xml" rel="self"/>
   <link href="http://hanqin.me/"/>
-  <updated>2013-08-04T23:57:24+08:00</updated>
+  <updated>2013-08-10T12:23:42+08:00</updated>
   <id>http://hanqin.me/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
@@ -12,6 +12,99 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[android toast usages and tests]]></title>
+    <link href="http://hanqin.me/blog/2013/08/10/android-toast/"/>
+    <updated>2013-08-10T11:37:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/08/10/android-toast</id>
+    <content type="html"><![CDATA[<h3>Usage tips</h3>
+
+<p>I have been perplexed for a long time by the duration parameter of android Toast function,
+before I noticed the warning message from android studio</p>
+
+<p><img class="center" src="http://hanqin.me/images/android_studio_magic_constant_warning.png" title="image" alt="images"></p>
+
+<p>The right way is</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">activity</span><span class="o">,</span> <span class="s">&quot;Email was sent successfully.&quot;</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">activity</span><span class="o">,</span> <span class="s">&quot;Email was sent successfully.&quot;</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Test</h3>
+
+<p>I will demonstrate how to test toast function with <a href="http://robolectric.org/">Robolectric</a></p>
+
+<p>1, For default toast message</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Toast</span> <span class="n">toast</span> <span class="o">=</span> <span class="n">ShadowToast</span><span class="o">.</span><span class="na">getLatestToast</span><span class="o">();</span>
+</span><span class='line'><span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="n">Robolectric</span><span class="o">.</span><span class="na">shadowOf</span><span class="o">(</span><span class="n">toast</span><span class="o">).</span><span class="na">text</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Also, you can use</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="n">ShadowToast</span><span class="o">.</span><span class="na">getTextOfLatestToast</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To check shown toast count</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">ShadowToast</span><span class="o">.</span><span class="na">shownToastCount</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To verify a toast message has been displayed</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">CharSequence</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;custom message&quot;</span>
+</span><span class='line'><span class="kt">boolean</span> <span class="n">showed</span> <span class="o">=</span> <span class="n">ShadowToast</span><span class="o">.</span><span class="na">showedToast</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To get all shown toasts</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">Toast</span><span class="o">&gt;</span> <span class="n">toasts</span> <span class="o">=</span> <span class="n">Robolectric</span><span class="o">.</span><span class="na">getShadowApplication</span><span class="o">().</span><span class="na">getShownToasts</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To reset all shown toasts list</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">ShadowToast</span><span class="o">.</span><span class="na">reset</span><span class="o">();</span> <span class="c1">// or..</span>
+</span><span class='line'><span class="n">Robolectric</span><span class="o">.</span><span class="na">getShadowApplication</span><span class="o">().</span><span class="na">getShownToasts</span><span class="o">().</span><span class="na">clear</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2, For custom toasts</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">CharSequence</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;custom message&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">layoutResourceIdToCheckForMessage</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">custom_toast_text_view_id</span><span class="o">;</span>
+</span><span class='line'><span class="kt">boolean</span> <span class="n">showed</span> <span class="o">=</span> <span class="n">ShadowToast</span><span class="o">.</span><span class="na">showedCustomToast</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">layoutResourceIdToCheckForMessage</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For busy developers who don&rsquo;t have time to look at source codes of robolectric. :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[implement email function in android]]></title>
