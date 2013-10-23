@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>this is a test - Han Qin . Me</title>
+  <title>Ardroid environment sensor - my first android - arduino project - Han Qin . Me</title>
   <meta name="author" content="Han Qin">
 
   
-  <meta name="description" content="This is a test
-">
-  
+  <meta name="description" content="build android - arduino project with bluetooth">
+  <meta name="keywords" content="android, ardunio, bluetooth, DHT11, gradle, Firmata, AChartEngine">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hanqin.me/blog/2013/07/25/this-is-a-test">
+  <link rel="canonical" href="http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Han Qin . Me" type="application/atom+xml">
@@ -85,7 +84,7 @@
   
   <header>
     
-      <h1 class="entry-title">This Is a Test</h1>
+      <h1 class="entry-title">Ardroid Environment Sensor - My First Android - Arduino Project</h1>
     
     
       <p class="meta">
@@ -101,14 +100,53 @@
   
 
 
-<time datetime="2013-07-25T22:06:00+08:00" pubdate data-updated="true">Jul 25<span>th</span>, 2013</time>
+<time datetime="2013-10-23T22:37:00+08:00" pubdate data-updated="true">Oct 23<span>rd</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>This is a test</p>
+<div class="entry-content"><p>Recently, I have spent most of my spare time on <a href="http://www.arduino.cc/">arduino</a>, an open-source
+electronics prototyping platform.</p>
+
+<p>Arduino is very easy to use that one with little hardware
+knowledge like me could start making something quickly, and with various shields
+and sensors, it is also very powerful.</p>
+
+<p>Ok, let&rsquo;s go to the main topic today, my first android arduino project.</p>
+
+<p>The reason for the small project is very tricky, that is, I usually doubt the
+weather and envrionmental info from official departments, especially for the PM
+2.5, As a result I decided to build an environment sensor and take it with me
+every day. The data around me is the most accurate one, right?</p>
+
+<p><img class="center" src="/images/ardroid.png" title="image" alt="images">
+Above is how ardorid looks like, at the time of writing, I havn&rsquo;t found
+a satisfying PM2.5 sensor, so you can only see two lines showing.</p>
+
+<h4>The basic idea is:</h4>
+
+<ol>
+<li><p>android device (my Huawei Y300) will act as a collector, analyser and display
+of the envriomental data.</p></li>
+<li><p>arduino(openjumper mega2560, openjumper sensor shield v3, bluetooth adapter,
+dht11 sensor) will retrieve data and feed to the collector.</p></li>
+</ol>
+
+
+<h4>Some details of the tech stack:</h4>
+
+<ol>
+<li><p>For the beautiful dynamic chart, the framework is <em>AChartEngine</em>.</p></li>
+<li><p>For communication between android and arduino, <em>Firmata</em> is your friend.</p></li>
+<li><p>Also, <em>bluetooth</em> is a nice choice besides google ADK board.
+<em>OpenJumper sensor shield v3</em> makes the integration of bluetooth module, <em>DHT11</em> sensor supper easy.</p></li>
+<li>Others like the battery-powersource, gradle will lead you a good life:)</li>
+</ol>
+
+
+<p>Please refer to <a href="https://github.com/hanqin/Ardroid">Github</a> for the code.</p>
 </div>
 
 
@@ -131,12 +169,12 @@
   
 
 
-<time datetime="2013-07-25T22:06:00+08:00" pubdate data-updated="true">Jul 25<span>th</span>, 2013</time>
+<time datetime="2013-10-23T22:37:00+08:00" pubdate data-updated="true">Oct 23<span>rd</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/notes/'>notes</a>
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/arduino/'>arduino</a>, <a class='category' href='/blog/categories/notes/'>notes</a>
   
 </span>
 
@@ -164,8 +202,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/08/10/android-toast/" title="Previous Post: android toast usages and tests">&laquo; android toast usages and tests</a>
       
-        <a class="basic-alignment right" href="/blog/2013/07/25/octopress-on-heroku-day-1/" title="Next Post: octopress on heroku - day 1">octopress on heroku - day 1 &raquo;</a>
       
     </p>
   </footer>
@@ -246,7 +284,7 @@
 
 <section>
 <h1>QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr></h1>
-<a href="http://hanqin.me/blog/2013/07/25/this-is-a-test/"><img src="http://chart.apis.google.com/chart?chs=112x112&cht=qr&chld=|0&chco=736F6E&chl=http://hanqin.me/blog/2013/07/25/this-is-a-test/" alt="post-qrcode"></a></section>
+<a href="http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project/"><img src="http://chart.apis.google.com/chart?chs=112x112&cht=qr&chld=|0&chco=736F6E&chl=http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project/" alt="post-qrcode"></a></section>
 
 <section class="googleplus googleplus-hidden">
   <h1>
@@ -278,8 +316,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://hanqin.me/blog/2013/07/25/this-is-a-test/';
-        var disqus_url = 'http://hanqin.me/blog/2013/07/25/this-is-a-test/';
+        var disqus_identifier = 'http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project/';
+        var disqus_url = 'http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project/';
         var disqus_script = 'embed.js';
       
     (function () {

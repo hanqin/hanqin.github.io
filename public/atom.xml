@@ -4,7 +4,7 @@
   <title><![CDATA[Han Qin . Me]]></title>
   <link href="http://hanqin.me/atom.xml" rel="self"/>
   <link href="http://hanqin.me/"/>
-  <updated>2013-10-22T10:16:11+08:00</updated>
+  <updated>2013-10-23T23:46:20+08:00</updated>
   <id>http://hanqin.me/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
@@ -12,6 +12,54 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ardroid environment sensor - my first android - arduino project]]></title>
+    <link href="http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project/"/>
+    <updated>2013-10-23T22:37:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project</id>
+    <content type="html"><![CDATA[<p>Recently, I have spent most of my spare time on <a href="http://www.arduino.cc/">arduino</a>, an open-source
+electronics prototyping platform.</p>
+
+<p>Arduino is very easy to use that one with little hardware
+knowledge like me could start making something quickly, and with various shields
+and sensors, it is also very powerful.</p>
+
+<p>Ok, let&rsquo;s go to the main topic today, my first android arduino project.</p>
+
+<p>The reason for the small project is very tricky, that is, I usually doubt the
+weather and envrionmental info from official departments, especially for the PM
+2.5, As a result I decided to build an environment sensor and take it with me
+every day. The data around me is the most accurate one, right?</p>
+
+<p><img class="center" src="http://hanqin.me/images/ardroid.png" title="image" alt="images">
+Above is how ardorid looks like, at the time of writing, I havn&rsquo;t found
+a satisfying PM2.5 sensor, so you can only see two lines showing.</p>
+
+<h4>The basic idea is:</h4>
+
+<ol>
+<li><p>android device (my Huawei Y300) will act as a collector, analyser and display
+of the envriomental data.</p></li>
+<li><p>arduino(openjumper mega2560, openjumper sensor shield v3, bluetooth adapter,
+dht11 sensor) will retrieve data and feed to the collector.</p></li>
+</ol>
+
+
+<h4>Some details of the tech stack:</h4>
+
+<ol>
+<li><p>For the beautiful dynamic chart, the framework is <em>AChartEngine</em>.</p></li>
+<li><p>For communication between android and arduino, <em>Firmata</em> is your friend.</p></li>
+<li><p>Also, <em>bluetooth</em> is a nice choice besides google ADK board.
+<em>OpenJumper sensor shield v3</em> makes the integration of bluetooth module, <em>DHT11</em> sensor supper easy.</p></li>
+<li>Others like the battery-powersource, gradle will lead you a good life:)</li>
+</ol>
+
+
+<p>Please refer to <a href="https://github.com/hanqin/Ardroid">Github</a> for the code.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[android toast usages and tests]]></title>
