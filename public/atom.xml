@@ -4,7 +4,7 @@
   <title><![CDATA[Han Qin . Me]]></title>
   <link href="http://hanqin.me/atom.xml" rel="self"/>
   <link href="http://hanqin.me/"/>
-  <updated>2014-01-06T17:25:38+08:00</updated>
+  <updated>2014-04-01T18:52:34+08:00</updated>
   <id>http://hanqin.me/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Audio play with HTML5]]></title>
+    <link href="http://hanqin.me/blog/2014/04/01/audio-play-with-html5/"/>
+    <updated>2014-04-01T18:50:00+08:00</updated>
+    <id>http://hanqin.me/blog/2014/04/01/audio-play-with-html5</id>
+    <content type="html"><![CDATA[<p><a href="http://webaudiodemos.appspot.com/AudioRecorder/index.html">Click Me!</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ardroid environment sensor - my first android - arduino project]]></title>
