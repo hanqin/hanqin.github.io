@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: android | Han Qin . Me]]></title>
+  <link href="http://hanqin.me/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://hanqin.me/"/>
+  <updated>2014-04-01T18:52:34+08:00</updated>
+  <id>http://hanqin.me/</id>
+  <author>
+    <name><![CDATA[Han Qin]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ardroid environment sensor - my first android - arduino project]]></title>
+    <link href="http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project/"/>
+    <updated>2013-10-23T22:37:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project</id>
+    <content type="html"><![CDATA[<p>Recently, I have spent most of my spare time on <a href="http://www.arduino.cc/">arduino</a>, an open-source
+electronics prototyping platform.</p>
+
+<p>Arduino is very easy to use that one with little hardware
+knowledge like me could start making something quickly, and with various shields
+and sensors, it is also very powerful.</p>
+
+<p>Ok, let&rsquo;s go to the main topic today, my first android arduino project.</p>
+
+<p>The reason for the small project is very tricky, that is, I usually doubt the
+weather and envrionmental info from official departments, especially for the PM
+2.5, As a result I decided to build an environment sensor and take it with me
+every day. The data around me is the most accurate one, right?</p>
+
+<p><img class="center" src="/images/ardroid.png" title="&lsquo;image&rsquo; &lsquo;images&rsquo;" >
+Above is how ardorid looks like, at the time of writing, I havn&rsquo;t found
+a satisfying PM2.5 sensor, so you can only see two lines showing.</p>
+
+<h4>The basic idea is:</h4>
+
+<ol>
+<li><p>android device (my Huawei Y300) will act as a collector, analyser and display
+of the envriomental data.</p></li>
+<li><p>arduino(openjumper mega2560, openjumper sensor shield v3, bluetooth adapter,
+dht11 sensor) will retrieve data and feed to the collector.</p></li>
+</ol>
+
+
+<h4>Some details of the tech stack:</h4>
+
+<ol>
+<li><p>For the beautiful dynamic chart, the framework is <em>AChartEngine</em>.</p></li>
+<li><p>For communication between android and arduino, <em>Firmata</em> is your friend.</p></li>
+<li><p>Also, <em>bluetooth</em> is a nice choice besides google ADK board.
+<em>OpenJumper sensor shield v3</em> makes the integration of bluetooth module, <em>DHT11</em> sensor supper easy.</p></li>
+<li>Others like the battery-powersource, gradle will lead you a good life:)</li>
+</ol>
+
+
+<p>Please refer to <a href="https://github.com/hanqin/Ardroid">Github</a> for the code.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[android toast usages and tests]]></title>
+    <link href="http://hanqin.me/blog/2013/08/10/android-toast/"/>
+    <updated>2013-08-10T11:37:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/08/10/android-toast</id>
+    <content type="html"><![CDATA[<h3>Usage tips</h3>
+
+<p>I have been perplexed for a long time by the duration parameter of android Toast function,
+before I noticed the warning message from android studio</p>
+
+<p><img class="center" src="/images/android_studio_magic_constant_warning.png" title="&lsquo;image&rsquo; &lsquo;images&rsquo;" ></p>
+
+<p>The right way is</p>
+
+<p><code>java
+Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_LONG).show();
+</code></p>
+
+<p>or</p>
+
+<p><code>java
+Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_SHORT).show();
+</code></p>
+
+<h3>Test</h3>
+
+<p>I will demonstrate how to test toast function with <a href="http://robolectric.org/">Robolectric</a></p>
+
+<p>1, For default toast message
+<code>java
+Toast toast = ShadowToast.getLatestToast();
+String text = Robolectric.shadowOf(toast).text;
+</code></p>
+
+<p>Also, you can use
+<code>java
+String text = ShadowToast.getTextOfLatestToast();
+</code></p>
+
+<p>To check shown toast count
+<code>java
+int count = ShadowToast.shownToastCount();
+</code></p>
+
+<p>To verify a toast message has been displayed
+<code>java
+CharSequence message = "custom message"
+boolean showed = ShadowToast.showedToast(message);
+</code></p>
+
+<p>To get all shown toasts
+<code>java
+List&lt;Toast&gt; toasts = Robolectric.getShadowApplication().getShownToasts();
+</code></p>
+
+<p>To reset all shown toasts list
+<code>java
+ShadowToast.reset(); // or..
+Robolectric.getShadowApplication().getShownToasts().clear();
+</code></p>
+
+<p>2, For custom toasts
+<code>java
+CharSequence message = "custom message";
+int layoutResourceIdToCheckForMessage = R.id.custom_toast_text_view_id;
+boolean showed = ShadowToast.showedCustomToast(message, layoutResourceIdToCheckForMessage);
+</code></p>
+
+<p>For busy developers who don&rsquo;t have time to look at source codes of robolectric. :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[implement email function in android]]></title>
+    <link href="http://hanqin.me/blog/2013/07/29/send-email-in-android/"/>
+    <updated>2013-07-29T22:45:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/07/29/send-email-in-android</id>
+    <content type="html"><![CDATA[<p>There are several ways to implement email function in android, with their own pros and cons. I will try to summarize everything here, and you can find a <a href="https://github.com/hanqin/AndroidEmailDemo">demo application</a> at the end.</p>
+
+<h3>1) Use installed mail apps</h3>
+
+<ul>
+<li><p>Create an intent with <em>ACTION_SEND</em> and <em>mailto</em> scheme:</p></li>
+<li><p>MimeType can be set to <em>message/rfc822</em> instead of <em>text/plain</em>, to limit applications displayed in the chooser dialog.</p></li>
+<li><p><em>message/rfc822</em> stands for</p>
+
+<blockquote><p>Email; EML files, MIME files, MHT files, MHTML files; Defined in RFC 2045 and RFC 2046</p></blockquote></li>
+<li><p>There is also an enhanced version, from which you can determine what will be displayed in the chooser dialog.</p></li>
+</ul>
+
+
+<p><code>java
+Intent intent = new Intent(Intent.ACTION_SEND, Uri.fromParts("mailto", TO_ME, null));
+intent.setType("message/rfc822");
+intent.putExtra(Intent.EXTRA_EMAIL, new String[]{TO_ME});
+intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+intent.putExtra(Intent.EXTRA_TEXT, text);
+activity.startActivity(Intent.createChooser(intent, "Send mail..."));
+</code></p>
+
+<h3>2) Use the java mail api</h3>
+
+<p>(ported to android by <a href="http://www.jondev.net/">Jon Simon</a>).</p>
+
+<p>Firstly, you will need to download three jar files from <a href="https://code.google.com/p/javamail-android/">https://code.google.com/p/javamail-android/</a> .</p>
+
+<p>Then, simply follow the code provided in the demo application, or you can refer to <a href="http://www.tutorialspoint.com/java/java_sending_email.htm">http://www.tutorialspoint.com/java/java_sending_email.htm</a> for a comprehensive guide.</p>
+
+<h3>3) Use specifically built backend Api</h3>
+
+<p>Most applications have a backend service, it is easy to add an api that collects info from handsets and send mail on the server side.</p>
+
+<h4>Demo application: (last update on Aug, 4, 2013)</h4>
+
+<p><a href="https://github.com/hanqin/AndroidEmailDemo">https://github.com/hanqin/AndroidEmailDemo</a></p>
+
+<h4>References:</h4>
+
+<p><a href="http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application">http://stackoverflow.com/questions/2197741/how-to-send-email-from-my-android-application</a>
+<a href="http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android">http://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android</a>
+<a href="http://en.wikipedia.org/wiki/Internet_media_type">http://en.wikipedia.org/wiki/Internet_media_type</a>
+<a href="http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_">http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_</a>(no_Intents)_in_Android
+<a href="http://developer.android.com/guide/components/intents-filters.html">http://developer.android.com/guide/components/intents-filters.html</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[add an android library project in intellij or android studio]]></title>
+    <link href="http://hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/"/>
+    <updated>2013-07-28T22:44:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio</id>
+    <content type="html"><![CDATA[<p>It can be tricky sometimes when adding an android library project in intellij or android studio.
+The reasons may vary from time to time but two I recently encountered are:</p>
+
+<ol>
+<li>Automatic update of project.properties is disabled in intellij, thus the android library project cannot be added.</li>
+<li>Creating a new library module in android studio, for an ant based project, Studio only creates a settings.gradle, but <em>forget</em> to change the project.properties.</li>
+</ol>
+
+
+<p>So far, the root cause is clear, the inconsistency between ide settings and android configs.</p>
+
+<ol>
+<li>You can manually update project.properties to a correct value
+<code>
+target=android-16
+android.library.reference.1=../../actionbarsherlock
+</code>
+and
+<code>
+android.library=true
+target=android-14
+</code></li>
+<li>Remember to update settings in your IDE</li>
+</ol>
+
+
+<p><img class="center" src="/images/intellij_update_project_properties.png" title="&lsquo;image&rsquo; &lsquo;images&rsquo;" ></p>
+
+<p>That&rsquo;s it.</p>
+]]></content>
+  </entry>
+  
+</feed>

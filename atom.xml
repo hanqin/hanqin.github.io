@@ -1,154 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Han Qin . Me</title>
-  <meta name="author" content="Han Qin">
-
-  
-  <meta name="description" content="Click Me!
-">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://hanqin.me">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Han Qin . Me" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <meta name="baidu-tc-cerfication" content="981fd57b7ffcb9cdf31f090521789601" />
-<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-42725285-1']);
-        _gaq.push(['_setDomainName', 'hanqin.me']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
-
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Han Qin . Me</a></h1>
-  
-    <h2>Always being better</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:hanqin.me" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[Han Qin . Me]]></title>
+  <link href="http://hanqin.me/atom.xml" rel="self"/>
+  <link href="http://hanqin.me/"/>
+  <updated>2014-04-01T18:52:34+08:00</updated>
+  <id>http://hanqin.me/</id>
+  <author>
+    <name><![CDATA[Han Qin]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2014/04/01/audio-play-with-html5/">Audio Play With HTML5</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2014-04-01T18:50:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://webaudiodemos.appspot.com/AudioRecorder/index.html">Click Me!</a></p>
-</div>
+  <entry>
+    <title type="html"><![CDATA[Audio play with HTML5]]></title>
+    <link href="http://hanqin.me/blog/2014/04/01/audio-play-with-html5/"/>
+    <updated>2014-04-01T18:50:00+08:00</updated>
+    <id>http://hanqin.me/blog/2014/04/01/audio-play-with-html5</id>
+    <content type="html"><![CDATA[<p><a href="http://webaudiodemos.appspot.com/AudioRecorder/index.html">Click Me!</a></p>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project/">Ardroid Environment Sensor - My First Android - Arduino Project</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-23T22:37:00+08:00" pubdate data-updated="true">Oct 23<span>rd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Recently, I have spent most of my spare time on <a href="http://www.arduino.cc/">arduino</a>, an open-source
+  <entry>
+    <title type="html"><![CDATA[Ardroid environment sensor - my first android - arduino project]]></title>
+    <link href="http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project/"/>
+    <updated>2013-10-23T22:37:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project</id>
+    <content type="html"><![CDATA[<p>Recently, I have spent most of my spare time on <a href="http://www.arduino.cc/">arduino</a>, an open-source
 electronics prototyping platform.</p>
 
 <p>Arduino is very easy to use that one with little hardware
@@ -162,7 +41,7 @@ weather and envrionmental info from official departments, especially for the PM
 2.5, As a result I decided to build an environment sensor and take it with me
 every day. The data around me is the most accurate one, right?</p>
 
-<p><img class="center" src="/images/ardroid.png" title="image" alt="images">
+<p><img class="center" src="http://hanqin.me/images/ardroid.png" title="image" alt="images">
 Above is how ardorid looks like, at the time of writing, I havn&rsquo;t found
 a satisfying PM2.5 sensor, so you can only see two lines showing.</p>
 
@@ -188,47 +67,20 @@ dht11 sensor) will retrieve data and feed to the collector.</p></li>
 
 
 <p>Please refer to <a href="https://github.com/hanqin/Ardroid">Github</a> for the code.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/10/android-toast/">Android Toast Usages and Tests</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-10T11:37:00+08:00" pubdate data-updated="true">Aug 10<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Usage tips</h3>
+  <entry>
+    <title type="html"><![CDATA[android toast usages and tests]]></title>
+    <link href="http://hanqin.me/blog/2013/08/10/android-toast/"/>
+    <updated>2013-08-10T11:37:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/08/10/android-toast</id>
+    <content type="html"><![CDATA[<h3>Usage tips</h3>
 
 <p>I have been perplexed for a long time by the duration parameter of android Toast function,
 before I noticed the warning message from android studio</p>
 
-<p><img class="center" src="/images/android_studio_magic_constant_warning.png" title="image" alt="images"></p>
+<p><img class="center" src="http://hanqin.me/images/android_studio_magic_constant_warning.png" title="image" alt="images"></p>
 
 <p>The right way is</p>
 
@@ -308,42 +160,15 @@ before I noticed the warning message from android studio</p>
 
 
 <p>For busy developers who don&rsquo;t have time to look at source codes of robolectric. :)</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/29/send-email-in-android/">Implement Email Function in Android</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-29T22:45:00+08:00" pubdate data-updated="true">Jul 29<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There are several ways to implement email function in android, with their own pros and cons. I will try to summarize everything here, and you can find a <a href="https://github.com/hanqin/AndroidEmailDemo">demo application</a> at the end.</p>
+  <entry>
+    <title type="html"><![CDATA[implement email function in android]]></title>
+    <link href="http://hanqin.me/blog/2013/07/29/send-email-in-android/"/>
+    <updated>2013-07-29T22:45:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/07/29/send-email-in-android</id>
+    <content type="html"><![CDATA[<p>There are several ways to implement email function in android, with their own pros and cons. I will try to summarize everything here, and you can find a <a href="https://github.com/hanqin/AndroidEmailDemo">demo application</a> at the end.</p>
 
 <h3>1) Use installed mail apps</h3>
 
@@ -395,42 +220,15 @@ before I noticed the warning message from android studio</p>
 <a href="http://en.wikipedia.org/wiki/Internet_media_type">http://en.wikipedia.org/wiki/Internet_media_type</a>
 <a href="http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_">http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_</a>(no_Intents)_in_Android
 <a href="http://developer.android.com/guide/components/intents-filters.html">http://developer.android.com/guide/components/intents-filters.html</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/">Add an Android Library Project in Intellij or Android Studio</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-28T22:44:00+08:00" pubdate data-updated="true">Jul 28<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It can be tricky sometimes when adding an android library project in intellij or android studio.
+  <entry>
+    <title type="html"><![CDATA[add an android library project in intellij or android studio]]></title>
+    <link href="http://hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/"/>
+    <updated>2013-07-28T22:44:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio</id>
+    <content type="html"><![CDATA[<p>It can be tricky sometimes when adding an android library project in intellij or android studio.
 The reasons may vary from time to time but two I recently encountered are:</p>
 
 <ol>
@@ -465,45 +263,18 @@ The reasons may vary from time to time but two I recently encountered are:</p>
 </ol>
 
 
-<p><img class="center" src="/images/intellij_update_project_properties.png" title="image" alt="images"></p>
+<p><img class="center" src="http://hanqin.me/images/intellij_update_project_properties.png" title="image" alt="images"></p>
 
 <p>That&rsquo;s it.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/26/octopress-on-heroku-day-2/">Octopress on Heroku - Day 2</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-26T23:40:00+08:00" pubdate data-updated="true">Jul 26<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Tasks</h3>
+  <entry>
+    <title type="html"><![CDATA[octopress on heroku - day 2]]></title>
+    <link href="http://hanqin.me/blog/2013/07/26/octopress-on-heroku-day-2/"/>
+    <updated>2013-07-26T23:40:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/07/26/octopress-on-heroku-day-2</id>
+    <content type="html"><![CDATA[<h3>Tasks</h3>
 
 <ol>
 <li>Added several plugins, including comments from disqus, my reading from douban, QR code and readability
@@ -531,42 +302,15 @@ The reasons may vary from time to time but two I recently encountered are:</p>
 <li>Blogs!</li>
 </ol>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/25/octopress-on-heroku-day-1/">Octopress on Heroku - Day 1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-25T23:10:00+08:00" pubdate data-updated="true">Jul 25<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Tasks</h3>
+  <entry>
+    <title type="html"><![CDATA[octopress on heroku - day 1]]></title>
+    <link href="http://hanqin.me/blog/2013/07/25/octopress-on-heroku-day-1/"/>
+    <updated>2013-07-25T23:10:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/07/25/octopress-on-heroku-day-1</id>
+    <content type="html"><![CDATA[<h3>Tasks</h3>
 
 <ol>
 <li>Setup <a href="http://octopress.org/">octopress</a> according to the <a href="http://octopress.org/docs/">documentation</a></li>
@@ -618,170 +362,16 @@ The reasons may vary from time to time but two I recently encountered are:</p>
 <li>Comment</li>
 </ol>
 
-</div>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[this is a test]]></title>
+    <link href="http://hanqin.me/blog/2013/07/25/this-is-a-test/"/>
+    <updated>2013-07-25T22:06:00+08:00</updated>
+    <id>http://hanqin.me/blog/2013/07/25/this-is-a-test</id>
+    <content type="html"><![CDATA[<p>This is a test</p>
+]]></content>
+  </entry>
   
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/25/this-is-a-test/">This Is a Test</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-25T22:06:00+08:00" pubdate data-updated="true">Jul 25<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is a test</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Blogging</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/04/01/audio-play-with-html5/">Audio Play With HTML5</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project/">Ardroid Environment Sensor - My First Android - Arduino Project</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/10/android-toast/">Android Toast Usages and Tests</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/29/send-email-in-android/">Implement Email Function in Android</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/">Add an Android Library Project in Intellij or Android Studio</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>Coding</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/hanqin">@hanqin</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'hanqin',
-            count: 5,
-            skip_forks: false,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Reading</h1>
-  <script type="text/javascript" src="http://www.douban.com/service/badge/hanhaify/?show=dolist&amp;n=4&amp;columns=2&amp;picsize=medium&amp;hidelogo=true&amp;hideself=true&amp;cat=book" ></script>
-  <a href="https://www.douban.com/people/hanhaify">@hanhaify</a> on Douban 
-</section>
-
-<section>
-<h1>QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr></h1>
-<a href="http://hanqin.me/index.html"><img src="http://chart.apis.google.com/chart?chs=112x112&cht=qr&chld=|0&chco=736F6E&chl=http://hanqin.me/index.html" alt="post-qrcode"></a></section>
-
-<section class="googleplus googleplus-hidden">
-  <h1>
-    <a href="https://plus.google.com/hanhaify@gmail.com?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Han Qin -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'hanqin';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+</feed>
