@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby '1.9.3'
 
 gem 'stringex', '~> 1.4.0'
+gem 'sinatra', '~> 1.4.2'
 
 group :development do
   gem 'rake', '~> 10.0'
@@ -16,8 +17,6 @@ group :development do
   gem 'compass', '~> 1.0.1'
   gem 'sass-globbing', '~> 1.0.0'
   gem 'rb-fsevent', '~> 0.9'
-  gem 'liquid', '~> 2.3.0'
-  gem 'stringex', '~> 1.4.0'
+  gem 'liquid', '~> 2.5.0'
 end
 
-gem 'sinatra', '~> 1.4.2'

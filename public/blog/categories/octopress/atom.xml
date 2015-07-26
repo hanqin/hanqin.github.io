@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: octopress | Han Qin . Me]]></title>
-  <link href="http://hanqin.me/blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://hanqin.me/"/>
-  <updated>2014-04-01T18:52:34+08:00</updated>
-  <id>http://hanqin.me/</id>
+  <link href="http://hanqin.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://hanqin.github.io/"/>
+  <updated>2015-07-27T00:00:51+08:00</updated>
+  <id>http://hanqin.github.io/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[octopress on heroku - day 2]]></title>
-    <link href="http://hanqin.me/blog/2013/07/26/octopress-on-heroku-day-2/"/>
+    <link href="http://hanqin.github.io/blog/2013/07/26/octopress-on-heroku-day-2/"/>
     <updated>2013-07-26T23:40:00+08:00</updated>
-    <id>http://hanqin.me/blog/2013/07/26/octopress-on-heroku-day-2</id>
+    <id>http://hanqin.github.io/blog/2013/07/26/octopress-on-heroku-day-2</id>
     <content type="html"><![CDATA[<h3>Tasks</h3>
 
 <ol>
@@ -51,9 +51,9 @@
   
   <entry>
     <title type="html"><![CDATA[octopress on heroku - day 1]]></title>
-    <link href="http://hanqin.me/blog/2013/07/25/octopress-on-heroku-day-1/"/>
+    <link href="http://hanqin.github.io/blog/2013/07/25/octopress-on-heroku-day-1/"/>
     <updated>2013-07-25T23:10:00+08:00</updated>
-    <id>http://hanqin.me/blog/2013/07/25/octopress-on-heroku-day-1</id>
+    <id>http://hanqin.github.io/blog/2013/07/25/octopress-on-heroku-day-1</id>
     <content type="html"><![CDATA[<h3>Tasks</h3>
 
 <ol>
@@ -78,10 +78,10 @@
 </ol>
 
 
-<p><code>
-git push heroku master
-</code>
-but only got Operation/Connecting timed out error. To fix the issue, manually add ~/.ssh/config, and put following lines in it:
+<pre><code>git push heroku master
+</code></pre>
+
+<p>but only got Operation/Connecting timed out error. To fix the issue, manually add ~/.ssh/config, and put following lines in it:
 <code>
 Host heroku.com
 User freemember007
