@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: robolectric | Han Qin . Me]]></title>
-  <link href="http://hanqin.me/blog/categories/robolectric/atom.xml" rel="self"/>
-  <link href="http://hanqin.me/"/>
-  <updated>2014-04-01T18:52:34+08:00</updated>
-  <id>http://hanqin.me/</id>
+  <link href="http://hanqin.github.io/blog/categories/robolectric/atom.xml" rel="self"/>
+  <link href="http://hanqin.github.io/"/>
+  <updated>2015-07-27T00:00:51+08:00</updated>
+  <id>http://hanqin.github.io/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[android toast usages and tests]]></title>
-    <link href="http://hanqin.me/blog/2013/08/10/android-toast/"/>
+    <link href="http://hanqin.github.io/blog/2013/08/10/android-toast/"/>
     <updated>2013-08-10T11:37:00+08:00</updated>
-    <id>http://hanqin.me/blog/2013/08/10/android-toast</id>
+    <id>http://hanqin.github.io/blog/2013/08/10/android-toast</id>
     <content type="html"><![CDATA[<h3>Usage tips</h3>
 
 <p>I have been perplexed for a long time by the duration parameter of android Toast function,
@@ -27,15 +27,13 @@ before I noticed the warning message from android studio</p>
 
 <p>The right way is</p>
 
-<p><code>java
-Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_LONG).show();
-</code></p>
+<pre><code class="java">Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_LONG).show();
+</code></pre>
 
 <p>or</p>
 
-<p><code>java
-Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_SHORT).show();
-</code></p>
+<pre><code class="java">Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_SHORT).show();
+</code></pre>
 
 <h3>Test</h3>
 

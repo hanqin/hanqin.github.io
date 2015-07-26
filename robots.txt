@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://hanqin.me/sitemap.xml 
+Sitemap: http://hanqin.github.io/sitemap.xml 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: notes | Han Qin . Me]]></title>
-  <link href="http://hanqin.me/blog/categories/notes/atom.xml" rel="self"/>
-  <link href="http://hanqin.me/"/>
-  <updated>2014-04-01T18:52:34+08:00</updated>
-  <id>http://hanqin.me/</id>
+  <link href="http://hanqin.github.io/blog/categories/notes/atom.xml" rel="self"/>
+  <link href="http://hanqin.github.io/"/>
+  <updated>2015-07-27T00:00:51+08:00</updated>
+  <id>http://hanqin.github.io/</id>
   <author>
     <name><![CDATA[Han Qin]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ardroid environment sensor - my first android - arduino project]]></title>
-    <link href="http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project/"/>
+    <link href="http://hanqin.github.io/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project/"/>
     <updated>2013-10-23T22:37:00+08:00</updated>
-    <id>http://hanqin.me/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project</id>
+    <id>http://hanqin.github.io/blog/2013/10/23/ardroid-environment-sensor-my-first-android-arduino-project</id>
     <content type="html"><![CDATA[<p>Recently, I have spent most of my spare time on <a href="http://www.arduino.cc/">arduino</a>, an open-source
 electronics prototyping platform.</p>
 
@@ -63,9 +63,9 @@ dht11 sensor) will retrieve data and feed to the collector.</p></li>
   
   <entry>
     <title type="html"><![CDATA[android toast usages and tests]]></title>
-    <link href="http://hanqin.me/blog/2013/08/10/android-toast/"/>
+    <link href="http://hanqin.github.io/blog/2013/08/10/android-toast/"/>
     <updated>2013-08-10T11:37:00+08:00</updated>
-    <id>http://hanqin.me/blog/2013/08/10/android-toast</id>
+    <id>http://hanqin.github.io/blog/2013/08/10/android-toast</id>
     <content type="html"><![CDATA[<h3>Usage tips</h3>
 
 <p>I have been perplexed for a long time by the duration parameter of android Toast function,
@@ -75,15 +75,13 @@ before I noticed the warning message from android studio</p>
 
 <p>The right way is</p>
 
-<p><code>java
-Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_LONG).show();
-</code></p>
+<pre><code class="java">Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_LONG).show();
+</code></pre>
 
 <p>or</p>
 
-<p><code>java
-Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_SHORT).show();
-</code></p>
+<pre><code class="java">Toast.makeText(activity, "Email was sent successfully.", Toast.LENGTH_SHORT).show();
+</code></pre>
 
 <h3>Test</h3>
 
@@ -135,9 +133,9 @@ boolean showed = ShadowToast.showedCustomToast(message, layoutResourceIdToCheckF
   
   <entry>
     <title type="html"><![CDATA[implement email function in android]]></title>
-    <link href="http://hanqin.me/blog/2013/07/29/send-email-in-android/"/>
+    <link href="http://hanqin.github.io/blog/2013/07/29/send-email-in-android/"/>
     <updated>2013-07-29T22:45:00+08:00</updated>
-    <id>http://hanqin.me/blog/2013/07/29/send-email-in-android</id>
+    <id>http://hanqin.github.io/blog/2013/07/29/send-email-in-android</id>
     <content type="html"><![CDATA[<p>There are several ways to implement email function in android, with their own pros and cons. I will try to summarize everything here, and you can find a <a href="https://github.com/hanqin/AndroidEmailDemo">demo application</a> at the end.</p>
 
 <h3>1) Use installed mail apps</h3>
@@ -152,14 +150,13 @@ boolean showed = ShadowToast.showedCustomToast(message, layoutResourceIdToCheckF
 </ul>
 
 
-<p><code>java
-Intent intent = new Intent(Intent.ACTION_SEND, Uri.fromParts("mailto", TO_ME, null));
+<pre><code class="java">Intent intent = new Intent(Intent.ACTION_SEND, Uri.fromParts("mailto", TO_ME, null));
 intent.setType("message/rfc822");
 intent.putExtra(Intent.EXTRA_EMAIL, new String[]{TO_ME});
 intent.putExtra(Intent.EXTRA_SUBJECT, subject);
 intent.putExtra(Intent.EXTRA_TEXT, text);
 activity.startActivity(Intent.createChooser(intent, "Send mail..."));
-</code></p>
+</code></pre>
 
 <h3>2) Use the java mail api</h3>
 
@@ -189,9 +186,9 @@ activity.startActivity(Intent.createChooser(intent, "Send mail..."));
   
   <entry>
     <title type="html"><![CDATA[add an android library project in intellij or android studio]]></title>
-    <link href="http://hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/"/>
+    <link href="http://hanqin.github.io/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio/"/>
     <updated>2013-07-28T22:44:00+08:00</updated>
-    <id>http://hanqin.me/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio</id>
+    <id>http://hanqin.github.io/blog/2013/07/28/add-an-android-library-project-in-intellij-or-android-studio</id>
     <content type="html"><![CDATA[<p>It can be tricky sometimes when adding an android library project in intellij or android studio.
 The reasons may vary from time to time but two I recently encountered are:</p>
 
@@ -226,9 +223,9 @@ target=android-14
   
   <entry>
     <title type="html"><![CDATA[octopress on heroku - day 2]]></title>
-    <link href="http://hanqin.me/blog/2013/07/26/octopress-on-heroku-day-2/"/>
+    <link href="http://hanqin.github.io/blog/2013/07/26/octopress-on-heroku-day-2/"/>
     <updated>2013-07-26T23:40:00+08:00</updated>
-    <id>http://hanqin.me/blog/2013/07/26/octopress-on-heroku-day-2</id>
+    <id>http://hanqin.github.io/blog/2013/07/26/octopress-on-heroku-day-2</id>
     <content type="html"><![CDATA[<h3>Tasks</h3>
 
 <ol>
